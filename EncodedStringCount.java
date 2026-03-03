@@ -15,7 +15,7 @@ public class EncodedStringCount {
         int oneSetEncodedCount = encodedStringCount(str.substring(1));
         int twoSetEncodedCount = 0;
         //recursive call for double-digit count of encoded string
-        if(str.length() > 1) {
+        if(str.length() > 1 && Integer.parseInt(str.substring(0, 2)) >= 10 && Integer.parseInt(str.substring(0, 2)) <= 26) {
             twoSetEncodedCount = encodedStringCount(str.substring(2));
         }
         return oneSetEncodedCount + twoSetEncodedCount;
